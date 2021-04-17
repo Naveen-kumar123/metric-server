@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    name: sample-deploy
+spec:
+    replicas: 5
+    template:
+      metadata:
+       labels:
+         app: sample-ctr
+      spec:
+         containers:
+         - name: sample-pod
+           image: nginx
+           ports:
+           - containerPort: 80
+
